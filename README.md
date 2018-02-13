@@ -2,7 +2,7 @@
 
 An end to end testing platform for Web, Hybrid and Native project.
 
-### This repository includes ###
+### This repository includes  ###
 
 End to end specs for Project windows.
 
