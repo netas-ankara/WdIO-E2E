@@ -28,10 +28,16 @@ If you want to check everything is good for appium setup, run below on command p
 
     appium-doctor
     
-### Example Run Scripts ###
+### Example Run Scripts For Web Testing ###
     wdio wdio.conf.js --suite=Test
     OR
     npm run test-web
+
+### Example Run Scripts For Native Android App Testing ###
+    wdio wdio.android.conf.js --suite=Test
+    OR
+    npm run test-android
+
 
 ### Create Allure Report ###
 

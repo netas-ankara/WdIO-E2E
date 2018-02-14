@@ -6,6 +6,7 @@
   "license": "ISC",
   "scripts": {
     "test-web": "wdio wdio.config.js --suite=Test",
+    "test-android": "wdio wdio.android.config.js --suite=Test",
     "report": "allure generate --clean Reports/allure-results -o Reports/allure-report && allure open Reports/allure-report"
   },
   "dependencies": {
