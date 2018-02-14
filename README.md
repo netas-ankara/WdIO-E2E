@@ -23,6 +23,10 @@ Or Manuel Install
 ### Appium Testing For Android Native App ###
 
 For native android testing, please set some variables under "Basic Setup" caption [that link][1]
+
+If you want to check everything is good for appium setup, run below on command prompt
+
+    appium-doctor
     
 ### Example Run Scripts ###
     wdio wdio.conf.js --suite=Test
