@@ -3,14 +3,17 @@
 import { defineSupportCode } from 'cucumber';
 
 import WorldPage from "../Shared/World.PageObject";
+import HomePage from "./Test.PageObject";
 
 defineSupportCode(({ Given, When, Then }) => {
 
-    Then(/^Logo is exist/, function () {
+    When(/^Searching "(.*)" that word$/, function(word) {
+        HomePage.searchInput.setValue(word);
 
-        browser.getTitle().should.equal('S. Enes Pekkaya - .Net, c#, Silverlight, Php, JQuery');
-        WorldPage.logoImg.getAttribute("alt").should.equal('S. Enes Pekkaya - .net, c#, php');
+        return HomePage.searchButton.click();
+    });
 
+    Then(/^Logo is exist$/, function () {
         return expect(WorldPage.logoImg).to.exist;
     });
 });

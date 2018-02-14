@@ -7,8 +7,6 @@ allure-report/
 Reports/*
 !Reports/**/README.md
 
-report.zip
-
 # Created by https://www.gitignore.io/api/node,phpstorm+all
 
 ### Node ###

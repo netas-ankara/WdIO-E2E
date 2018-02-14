@@ -1,5 +1,7 @@
 'use strict';
 
+let appiumController = require('appium-controller');
+
 module.exports = {
     seleniumLogs: './Logs',
 
@@ -18,6 +20,11 @@ module.exports = {
         }
     },
 
+    onPrepare: function (config, capabilities) {
+        if(!capabilities.browserName)
+            appiumController.startAppium();
+    },
+
     before: function (capabilities, specs) {
         var moment = require('moment');
         moment.locale('en');
@@ -27,7 +34,11 @@ module.exports = {
         global.CommonUtils = require('./Tests/Shared/CommonUtils');
         require('./Tests/Shared/AddCommand');
 
-        CommonUtils.browserSettings();
+        browser.getNSetParams();
+
+        if(capabilities.browserName)
+            CommonUtils.browserSettings();
+
         CommonUtils.chaiSettings();
     },
 
@@ -36,5 +47,10 @@ module.exports = {
             var name = 'ERROR-chrome-' + Date.now();
             browser.saveScreenshot('./Reports/ScreenShots/'+ name + '.png');
         }
-    }
+    },
+
+    onComplete: function (exitCode, config, capabilities) {
+        if(!capabilities.browserName)
+            appiumController.stopAppium();
+    },
 };

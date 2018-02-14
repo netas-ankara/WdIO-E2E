@@ -5,17 +5,19 @@
   "author": "S. Enes Pekkaya",
   "license": "ISC",
   "scripts": {
-    "test-web"    : "wdio wdio.config.js --suite=Test",
-    "report"      : "allure generate --clean Reports/allure-results && allure open"
+    "test-web": "wdio wdio.config.js --suite=Test",
+    "report": "allure generate --clean Reports/allure-results -o Reports/allure-report && allure open Reports/allure-report"
   },
   "dependencies": {
     "moment": "^2.20.1"
   },
   "devDependencies": {
+    "appium-controller": "^1.1.6",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "wdio-allure-reporter": "^0.3.2",
+    "wdio-appium-service": "^0.2.3",
     "wdio-cucumber-framework": "^1.1.0",
     "wdio-selenium-standalone-service": "0.0.9",
     "wdio-spec-reporter": "^0.1.3",
